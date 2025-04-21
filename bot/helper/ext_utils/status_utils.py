@@ -63,6 +63,7 @@ async def get_task_by_gid(gid: str):
 
 
 async def get_specific_tasks(status, user_id):
+    "<blockquotes>"
     if status == "All":
         if user_id:
             return [
@@ -274,6 +275,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         task_gid = task.gid()
         short_gid = task_gid[-8:] if task_gid.startswith("SABnzbd") else task_gid[:8]
         msg += f"\n<blockquote>/stop_{short_gid}</blockquote>\n\n"
+        "</blockquotes>"
 
     if len(msg) == 0:
         if status == "All":
