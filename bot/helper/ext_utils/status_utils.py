@@ -195,7 +195,6 @@ def source(self):
 
 
 async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
-    "<blockquotes>"msg += "⚡Powered By Downloader Zone⚡\n\n""</blockquotes>"
     msg = ""
     msg += ""
     button = None
@@ -297,6 +296,8 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             if status_value != status:
                 buttons.data_button(label, f"status {sid} st {status_value}")
     button = buttons.build_menu(8)
+    
+    msg += "<blockquotes>⚡Powered By Downloader Zone⚡</blockquotes>"
     msg += f"<b>CPU:</b> {cpu_percent()}% | <b>FREE:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
     msg += f"\n<b>RAM:</b> {virtual_memory().percent}% | <b>UPTIME:</b> {get_readable_time(time() - bot_start_time)}"
 
